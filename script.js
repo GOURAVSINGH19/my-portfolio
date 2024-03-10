@@ -11,7 +11,33 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
+
+// ----------------- nav -------------------//
+
+gsap.from("#logo",{
+  opacity:0,
+  scale:1.2,
+  duration:1,
+})
+gsap.from("#nav-product",{
+  y:"-100%",
+  opacity:0,
+  duration:1,
+})
+
+gsap.from("#nav-contact",{
+  y:"-100%",
+  opacity:0,
+  duration:1,
+})
+
+
+
+
+
+
 // ----------------- part-1 -------------------//
+
 var tl1 = gsap.timeline({
   scrollTrigger: {
     trigger: ".part-1",
@@ -49,16 +75,14 @@ tl1.to(
 tl1.to(".imgs-wrapper-1",{
   y:"-40%",
   duration:1.5,
+  scale:.6,
   opacity:0,
 },"a")
 tl1.to(".imgs-wrapper-2",{
-  y:"-30%",
-  duration:1,
-},"a")
-tl1.to(".imgs-wrapper-3",{
   y:"-40%",
   duration:1.5,
-  opacity:0
+  scale:.6,
+  opacity:0,
 },"a")
 tl1.to(
   ".scrolling",
