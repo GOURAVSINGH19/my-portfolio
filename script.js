@@ -1,4 +1,7 @@
-const lenis = new Lenis();
+const lenis = new Lenis({
+  duration:1.2,
+  easing:(t)=>Math.min(1,1.001 - Math.pow(2,-10*t))
+});
 lenis.on("scroll", (e) => {
   console.log(e);
 });
@@ -15,7 +18,6 @@ var tl1 = gsap.timeline({
     start: "50% 50%",
     end: "250% 50%",
     scrub: true,
-    // markers:true,
     pin: true,
   },
 });
@@ -40,10 +42,24 @@ var tl1 = gsap.timeline({
 tl1.to(
   ".overlay-div",
   {
-    backgroundColor: "#ff",
+    backgroundColor:"#000",
   },
   "a"
-);
+)
+tl1.to(".imgs-wrapper-1",{
+  y:"-40%",
+  duration:1.5,
+  opacity:0,
+},"a")
+tl1.to(".imgs-wrapper-2",{
+  y:"-30%",
+  duration:1,
+},"a")
+tl1.to(".imgs-wrapper-3",{
+  y:"-40%",
+  duration:1.5,
+  opacity:0
+},"a")
 tl1.to(
   ".scrolling",
   {
@@ -59,14 +75,6 @@ tl1.to(
   },
   "a"
 )
-tl1.to(".background-design",{
-    width:"100%",
-    height:"100vh",
-    backgroundColor:"#F4ECD7",
-    opacity:.9,
-    transformOrigin:"center center",
-    zIndex:"9999999"
-},'a')
 
 
 
@@ -88,7 +96,7 @@ tl2.to(".text-area-hover h1", {
   width: "100%",
 });
 tl2.to(".text-area-hover h2", {
-  delay: -0.4,
+  delay: -0.2,
   width: "100%",
 });
 
