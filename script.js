@@ -14,22 +14,22 @@ requestAnimationFrame(raf);
 
 // ----------------- nav -------------------//
 
-gsap.from("#logo",{
-  opacity:0,
-  scale:1.2,
-  duration:1,
-})
-gsap.from("#nav-product",{
-  y:"-100%",
-  opacity:0,
-  duration:1,
-})
+// gsap.from("#logo",{
+//   opacity:0,
+//   scale:1.2,
+//   duration:1,
+// })
+// gsap.from("#nav-product",{
+//   y:"-100%",
+//   opacity:0,
+//   duration:1,
+// })
 
-gsap.from("#nav-contact",{
-  y:"-100%",
-  opacity:0,
-  duration:1,
-})
+// gsap.from("#nav-contact",{
+//   y:"-100%",
+//   opacity:0,
+//   duration:1,
+// })
 
 
 
@@ -84,6 +84,10 @@ tl1.to(".imgs-wrapper-2",{
   scale:.6,
   opacity:0,
 },"a")
+tl1.to(".imgs-wrapper-3 img",{
+  duration:1.5,
+  opacity:1,
+},"a")
 tl1.to(
   ".scrolling",
   {
@@ -122,7 +126,33 @@ tl2.to(".text-area-hover h1", {
 tl2.to(".text-area-hover h2", {
   delay: -0.2,
   width: "100%",
+})
+
+
+
+gsap.utils.toArray(".card").forEach((e)=> {
+  let img= e.querySelector(".p-img img");
+
+  gsap.fromTo(
+    img,
+    {
+      clipPath:"polygon(0% 0%,100% 0% ,100% 0% ,0% 0%)"
+    },
+    {
+      clipPath:"polygon(0% 0%,100% 0% ,100% 100% ,0% 100%)",
+      ease:"power1.out",
+      duration:2,
+      scrollTrigger:{
+        trigger:e,
+        start:"center bottom",
+        end:"bottom top",
+        toggleActions:"play none none play",
+      }
+    }
+  )
 });
+
+
 
 //------------------part-4-----------//
 // var tl4 = gsap.timeline({
@@ -133,10 +163,12 @@ tl2.to(".text-area-hover h2", {
 //     scrub: true,
 //   },
 // });
-// tl4.to(".rounded-div-wrapper", {
+// tl4.to(".project-gallery", {
 //   height: 0,
 //   marginTop: 0,
 // });
+
+
 
 // let t1 = gsap.timeline({ delay: 0 });
 // function loader() {
