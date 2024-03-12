@@ -1,0 +1,32 @@
+{
+  "name": "react-title",
+  "version": "1.0.0",
+  "description": "a title mixin for react",
+  "main": "index.js",
+  "scripts": {
+      "prepublish": "gulp webpack",
+      "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jackong/react-title.git"
+  },
+  "keywords": [
+    "react",
+    "title",
+    "mixin"
+  ],
+  "author": "jackong <jackongc@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jackong/react-title/issues"
+  },
+  "homepage": "https://github.com/Jackong/react-title",
+  "devDependencies": {
+    "babel-core": "^5.8.22",
+    "babel-loader": "^5.3.2",
+    "gulp": "^3.9.0",
+    "webpack": "^1.12.0",
+    "webpack-stream": "^2.1.0"
+  }
+}
