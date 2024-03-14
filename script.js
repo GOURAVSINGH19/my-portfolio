@@ -14,22 +14,6 @@ requestAnimationFrame(raf);
 
 // ----------------- nav -------------------//
 
-// gsap.from("#logo",{
-//   opacity:0,
-//   scale:1.2,
-//   duration:1,
-// })
-// gsap.from("#nav-product",{
-//   y:"-100%",
-//   opacity:0,
-//   duration:1,
-// })
-
-// gsap.from("#nav-contact",{
-//   y:"-100%",
-//   opacity:0,
-//   duration:1,
-// })
 
 
 
@@ -42,7 +26,7 @@ var tl1 = gsap.timeline({
   scrollTrigger: {
     trigger: ".part-1",
     start: "50% 50%",
-    end: "250% 50%",
+    end: "200% 50%",
     scrub: true,
     pin: true,
   },
@@ -146,7 +130,7 @@ gsap.utils.toArray(".card").forEach((e)=> {
         trigger:e,
         start:"center bottom",
         end:"bottom top",
-        toggleActions:"play none none play",
+        toggleActions:"play none none reverse",
       }
     }
   )
@@ -338,11 +322,43 @@ gsap.utils.toArray(".card").forEach((e)=> {
 
 
 
-Shery.imageEffect(".img", {
-    style: 2, //Select Style
-    debug: true, // Debug Panel
-    config: {
-      /* Config made from debug panel */
-    },
-    preset: "./presets/wigglewobble.json",
-  });
+// Shery.imageEffect(".img", {
+//     style: 2, //Select Style
+//     debug: true, // Debug Panel
+//     config: {
+//       /* Config made from debug panel */
+//     },
+//     preset: "./presets/wigglewobble.json",
+// });
+
+function text() {
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  let interval = null;
+
+  document.querySelector(".name").onmouseover = (event) => {
+    let iteration = 0;
+
+    clearInterval(interval);
+
+    interval = setInterval(() => {
+      event.target.innerText = event.target.innerText
+        .split("")
+        .map((letter, index) => {
+          if (index < iteration) {
+            return event.target.dataset.value[index];
+          }
+
+          return letters[Math.floor(Math.random() * 26)];
+        })
+        .join("");
+
+      if (iteration >= event.target.dataset.value.length) {
+        clearInterval(interval);
+      }
+
+      iteration += 1 / 3;
+    }, 20);
+  };
+}
+text();
