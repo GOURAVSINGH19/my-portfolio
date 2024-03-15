@@ -1,6 +1,6 @@
 const lenis = new Lenis({
-  duration:1.2,
-  easing:(t)=>Math.min(1,1.001 - Math.pow(2,-10*t))
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
 });
 lenis.on("scroll", (e) => {
   console.log(e);
@@ -11,14 +11,7 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
-
 // ----------------- nav -------------------//
-
-
-
-
-
-
 
 // ----------------- part-1 -------------------//
 
@@ -26,7 +19,7 @@ var tl1 = gsap.timeline({
   scrollTrigger: {
     trigger: ".part-1",
     start: "50% 50%",
-    end: "200% 50%",
+    end: "150% 50%",
     scrub: true,
     pin: true,
   },
@@ -52,26 +45,38 @@ var tl1 = gsap.timeline({
 tl1.to(
   ".overlay-div",
   {
-    backgroundColor:"#000",
+    backgroundColor: "#000",
   },
   "a"
-)
-tl1.to(".imgs-wrapper-1",{
-  y:"-40%",
-  duration:1.5,
-  scale:.6,
-  opacity:0,
-},"a")
-tl1.to(".imgs-wrapper-2",{
-  y:"-40%",
-  duration:1.5,
-  scale:.6,
-  opacity:0,
-},"a")
-tl1.to(".imgs-wrapper-3 img",{
-  duration:1.5,
-  opacity:1,
-},"a")
+);
+tl1.to(
+  ".imgs-wrapper-1",
+  {
+    y: "-40%",
+    duration: 1.5,
+    scale: 0.6,
+    opacity: 0,
+  },
+  "a"
+);
+tl1.to(
+  ".imgs-wrapper-2",
+  {
+    y: "-40%",
+    duration: 1.5,
+    scale: 0.6,
+    opacity: 0,
+  },
+  "a"
+);
+tl1.to(
+  ".imgs-wrapper-3 img",
+  {
+    duration: 1.5,
+    opacity: 1,
+  },
+  "a"
+);
 tl1.to(
   ".scrolling",
   {
@@ -86,9 +91,7 @@ tl1.to(
     color: "#fff",
   },
   "a"
-)
-
-
+);
 
 Shery.makeMagnet(".magnet-target", {
   ease: "cubic-bezier(0.23, 1, 0.320, 1)",
@@ -110,30 +113,28 @@ tl2.to(".text-area-hover h1", {
 tl2.to(".text-area-hover h2", {
   delay: -0.2,
   width: "100%",
-})
+});
 
-
-
-gsap.utils.toArray(".card").forEach((e)=> {
-  let img= e.querySelector(".p-img img");
+gsap.utils.toArray(".card").forEach((e) => {
+  let img = e.querySelector(".p-img img");
 
   gsap.fromTo(
     img,
     {
-      clipPath:"polygon(0% 0%,100% 0% ,100% 0% ,0% 0%)"
+      clipPath: "polygon(0% 0%,100% 0% ,100% 0% ,0% 0%)",
     },
     {
-      clipPath:"polygon(0% 0%,100% 0% ,100% 100% ,0% 100%)",
-      ease:"power1.out",
-      duration:2,
-      scrollTrigger:{
-        trigger:e,
-        start:"center bottom",
-        end:"bottom top",
-        toggleActions:"play none none reverse",
-      }
+      clipPath: "polygon(0% 0%,100% 0% ,100% 100% ,0% 100%)",
+      ease: "power1.out",
+      duration: 2,
+      scrollTrigger: {
+        trigger: e,
+        start: "center bottom",
+        end: "bottom top",
+        toggleActions: "play none none reverse",
+      },
     }
-  )
+  );
 });
 
 
@@ -151,8 +152,6 @@ gsap.utils.toArray(".card").forEach((e)=> {
 //   height: 0,
 //   marginTop: 0,
 // });
-
-
 
 // let t1 = gsap.timeline({ delay: 0 });
 // function loader() {
@@ -319,8 +318,6 @@ gsap.utils.toArray(".card").forEach((e)=> {
 //     };
 //   }
 //   text();
-
-
 
 // Shery.imageEffect(".img", {
 //     style: 2, //Select Style
