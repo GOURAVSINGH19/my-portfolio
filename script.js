@@ -11,9 +11,38 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
-// ----------------- nav -------------------//
+// ----------------- loader -------------------//
+let t1 = gsap.timeline({ delay: 0 });
+function loader() {
+  function time() {
+    let a = 0;
+    setInterval(() => {
+      a = a + Math.floor(Math.random() * 15);
+      if (a < 100) {
+        document.querySelector(".loader>h1").innerHTML = a + "%";
+      } else {
+        a = 100;
+        document.querySelector(".loader>h1").innerHTML = a + "%";
+      }
+    }, 100);
+  }
 
-// ----------------- part-1 -------------------//
+  t1.to(".loader ", {
+    top: "-100vh",
+    delay: 1,
+    duration: 1.5,
+  });
+
+  t1.to(".loader h1 ", {
+    delay: 0.4,
+    onStart: time(),
+    duration: 1,
+  });
+}
+loader();
+
+
+//----------------- part-1 -------------------//
 
 var tl1 = gsap.timeline({
   scrollTrigger: {

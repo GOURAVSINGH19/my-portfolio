@@ -54,6 +54,23 @@ body {
 ::-webkit-scrollbar-corner{
   display: none;
 }
+
+/* ------------Loader--------------- */
+.loader{
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+
+.loader h1{
+  color: #fff;
+  font-size: 10vw;
+}
+
 /* -----------------------------main------------------*/
 
 #main {
