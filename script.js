@@ -357,6 +357,7 @@ gsap.utils.toArray(".card").forEach((e) => {
 //     preset: "./presets/wigglewobble.json",
 // });
 
+
 function text() {
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 

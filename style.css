@@ -29,7 +29,13 @@
   --cone: #f1a863;
   --cone2: #e2a164;
   --cable: #d14b48;
+  --primary-color: #010712;
+  --secondary-color: #818386;
+  --bg-color: #FCFDFD;
+  --button-color: #3B3636;
+  --h1-color: #3F444C;
 }
+
 
 * {
   margin: 0;
@@ -71,6 +77,8 @@ body {
   color: #fff;
   font-size: 10vw;
 }
+
+
 
 /* -----------------------------main------------------*/
 
@@ -663,7 +671,6 @@ svg text.dot {
 .part-4 {
   width: 100%;
   height: 75vh;
-  background-color: #111111;
   overflow: hidden;
 }
 
