@@ -46,14 +46,7 @@
   }
 
 
-[data-theme="dark"] {
-    --primary-color: #FCFDFD;
-    --secondary-color: #818386;
-    --bg-color: #010712;
-    --button-color: #818386;
-    --h1-color: #FCFDFD;
-}
-  
+
 
 /* -----------------nav-------------------- */
 nav {
@@ -65,8 +58,8 @@ nav {
     width: 100%;
     height: 15vh;
     padding: 0vw 3vw;
-    mix-blend-mode: difference;
     z-index: 9999;
+    color: #010712;
   }
   
   .lft-nav {
@@ -75,64 +68,65 @@ nav {
     overflow: hidden;
     cursor: pointer;
   }
-  
-  .lft-nav h1 {
-    color: #fff;
-    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
-  }
-  /* 
-  .lft-nav:hover #logo{
-    margin-top: -5.5vh;
-  } */
-  
+
   .rght-nav {
     font-size: 1vw;
-    overflow: hidden;
     cursor: pointer;
     width: 20vw;
     display: flex;
-    gap: 3vw;
-    overflow: visible;
+    justify-content: center;
+    align-items: center;
   }
   
   .rght-nav a h2 {
-    color: #fff;
+    color: #0c0c0c;
+    font-size: 2vw;
+    font-weight: 100;
     text-transform: uppercase;
-    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
   }
-
 
   /* -----------contact -------- */
 
 .contact-container {
     display: flex;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    background: var(--bg-color);
   }
   
   .left-col{
     width: 50vw;
     height: 100vh;
     padding: 5rem 3.5rem;
-    overflow: hidden;
   }
-  .left-col h1{
-    font-size: 2vw;
-    color:var(--color-white);
-    color: #1c1d20;
-    text-transform: capitalize;
-  }
-
+  
   .img{
     width: 100%;
-    background-color: rgb(161, 112, 21);
+    height: 60vh;
+    position: relative;
+    margin-top: 2rem;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgba(184, 138, 138, 0.731);
   }
 
   .img img{
-    height:50%;
+    width: 80%;
     object-fit: cover;
+    animation: img-ani infinite ease-out 15s;
   }
+
+  
+@keyframes img-ani {
+  from {
+    transform: rotate(0deg); /* Initial rotation angle */
+  }
+  to {
+    transform: rotate(360deg); /* Final rotation angle */
+  }
+}
+
 
   .right-co {
     background: var(--bg-color);
@@ -167,7 +161,6 @@ nav {
   }
   
   form {
-    width: 31.25rem;
     position: relative;
     margin-top: 2rem;
     padding: 1rem 0;

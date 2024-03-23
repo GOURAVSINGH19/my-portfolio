@@ -2,16 +2,18 @@ const lenis = new Lenis({
   duration: 1.2,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
 });
-lenis.on("scroll", (e) => {
-  console.log(e);
-});
+
 function raf(time) {
   lenis.raf(time);
   requestAnimationFrame(raf);
 }
 requestAnimationFrame(raf);
 
+
 // ----------------- loader -------------------//
+
+
+
 let t1 = gsap.timeline({ delay: 0 });
 function loader() {
   function time() {
@@ -44,6 +46,11 @@ loader();
 
 //----------------- part-1 -------------------//
 
+// draggable  imgs-wrapper-1
+
+
+
+
 var tl1 = gsap.timeline({
   scrollTrigger: {
     trigger: ".part-1",
@@ -53,6 +60,7 @@ var tl1 = gsap.timeline({
     pin: true,
   },
 });
+
 
 // tl.to(".rotate-div",{
 //     rotate: -15,
@@ -79,30 +87,12 @@ tl1.to(
   "a"
 );
 tl1.to(
-  ".imgs-wrapper-1",
-  {
-    y: "-40%",
-    duration: 1.5,
-    scale: 0.6,
-    opacity: 0,
-  },
-  "a"
-);
-tl1.to(
   ".imgs-wrapper-2",
   {
     y: "-40%",
     duration: 1.5,
     scale: 0.6,
     opacity: 0,
-  },
-  "a"
-);
-tl1.to(
-  ".imgs-wrapper-3 img",
-  {
-    duration: 1.5,
-    opacity: 1,
   },
   "a"
 );
